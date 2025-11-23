@@ -59,7 +59,7 @@ install-manpages: $(MANPAGES)
 install: install-mnexec install-manpages
 #	This seems to work on all pip versions
 	$(PYTHON) -m pip uninstall -y mininet || true
-	$(PYTHON) -m pip install .
+	$(PYTHON) -m pip install . $(PIP_OPTIONS)
 
 develop: $(MNEXEC) $(MANPAGES)
 # 	Perhaps we should link these as well

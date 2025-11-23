@@ -224,7 +224,8 @@ function mn_deps {
 
     echo "Installing Mininet core"
     pushd $MININET_DIR/mininet
-    sudo PYTHON=${PYTHON} make install
+    # Pass the PIP_ARGS to the Makefile
+    sudo PYTHON=${PYTHON} PIP_OPTIONS="${PIP_ARGS}" make install
     popd
 }
 
